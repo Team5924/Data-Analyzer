@@ -4,7 +4,7 @@ import numpy as np
 # "s=0" --> 0
 
 # "input" --> String
-def entry(input, type):
+def entry(input, dtype):
     # Locates the index of the "="
     x = 0
     for i in input:
@@ -12,21 +12,21 @@ def entry(input, type):
             x = x + 1
             break
         x = x+1
-    entry = []
+    m_entry = []
     # Selects the data from the entry, excluding the header
     for i in range(x, len(input)):
-        entry.append(input[i])
+        m_entry.append(input[i])
     # Type = True --> quantitative data; Type = False --> qualitative data
     if not type:
-        return "".join(entry)
+        return "".join(m_entry)
     else:
-        return int("".join(entry))
+        return int("".join(m_entry))
 
 # Utilizes the entry() to process and create a new array of data without the header
 
 def array(arr):
-    array = np.empty(np.shape(arr), np.int8)
+    m_array = np.empty(np.shape(arr), np.int8)
     for m in range(len(arr)):
         for n in range(len(arr[m])):
-            array[m][n] = entry(arr[m][n], True)
-    return array
+            m_array[m][n] = entry(arr[m][n], True)
+    return m_array
