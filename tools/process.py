@@ -25,8 +25,8 @@ def entry(input, dtype):
 # Utilizes the 'entry()' to process and create a new array of data without the header
 
 def array(arr):
-    m_array = np.zeros(np.shape(arr), np.int8)
+    m_array = np.empty(np.shape(arr), np.int64)
     for m in range(len(arr)):
         for n in range(len(arr[m])):
-            m_array[m][n] = entry(arr[m][n], True)
+            m_array[m][n] = int(entry(arr[m][n], True))
     return m_array
