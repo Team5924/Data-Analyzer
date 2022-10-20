@@ -1,3 +1,5 @@
 Index,Header,Scouter,Match,Alliance,Taxi,Auto Start Position,Taxi,Auto Upper Cargo,Auto Lower Cargo,Auto Cargo Missed,Teleop Upper Cargo,Teleop Lower Cargo,Teleop Cargo Missed,Climb
 h=0,s=5,m=1,r=0,t=11,as=0,ta=1,au=4,al=0,acm=1,tu=7,tl=0,tcm=3,c=2,e=0
-h=0,s=5,m=2,r=2,t=12,as=0,ta=1,au=5,al=0,acm=0,tu=5,tl=0,tcm=1,c=2,e=0
+h=1,s=5,m=2,r=2,t=12,as=0,ta=1,au=5,al=0,acm=0,tu=5,tl=0,tcm=1,c=2,e=0
+h=0,s=5,m=1,r=0,t=13,as=0,ta=1,au=4,al=0,acm=1,tu=7,tl=0,tcm=3,c=2,e=0
+h=1,s=5,m=2,r=2,t=14,as=0,ta=1,au=5,al=0,acm=0,tu=5,tl=0,tcm=1,c=2,e=0
