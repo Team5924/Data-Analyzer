@@ -1,4 +1,8 @@
 import numpy as np
+import pandas as pd
+
+scouters = pd.read_csv("files/scouters.csv")
+scouters = scouters.to_numpy()
 
 # Removes the header from each entry
 # "s=0" --> 0
@@ -25,8 +29,16 @@ def entry(input, dtype):
 # Utilizes the 'entry()' to process and create a new array of data without the header
 
 def array(arr):
-    m_array = np.empty(np.shape(arr), np.int64)
+    m_array = arr
     for m in range(len(arr)):
         for n in range(len(arr[m])):
             m_array[m][n] = int(entry(arr[m][n], True))
+    return m_array
+
+def names(arr):
+    m_array = arr
+    for m in range(len(arr)):
+        for x in range(len(scouters)):
+            if arr[m][1] == scouters[x][0]:
+                m_array[m][1] = scouters[x][1]
     return m_array
