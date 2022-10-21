@@ -1,8 +1,17 @@
 import numpy as np
+import pandas as pd
+
+scouters = pd.read_csv("files/scouters.csv")
+scouters = scouters.to_numpy()
+
+# Process all entries at once; all process functions here
+
+def all(arr):
+    return None
 
 # Removes the header from each entry
 # "s=0" --> 0
-# 'input' --> String
+# 'input' = string
 
 def entry(input, dtype):
     # Locates the index of the "="
@@ -25,8 +34,73 @@ def entry(input, dtype):
 # Utilizes the 'entry()' to process and create a new array of data without the header
 
 def array(arr):
-    m_array = np.zeros(np.shape(arr), np.int8)
+    m_array = arr
     for m in range(len(arr)):
         for n in range(len(arr[m])):
-            m_array[m][n] = entry(arr[m][n], True)
+            m_array[m][n] = int(entry(arr[m][n], True))
+    return m_array
+
+def names(arr, index):
+    m_array = arr
+    for m in range(len(arr)):
+        for i in range(len(scouters)):
+            if arr[m][index] == scouters[i][0]:
+                m_array[m][index] = scouters[i][1]
+    return m_array
+
+def alliance(arr, index):
+    m_array = arr
+    for m in range(len(arr)):
+        if arr[m][index] % 2 == 0:
+            m_array[m][index] = "Red"
+        else:
+            m_array[m][index] = "Blue"
+    return m_array
+
+# Simple function for processing only data that is binary
+
+def binary(arr, index):
+    m_array = arr
+    for m in range(len(arr)):
+        if arr[m][index] == 0:
+            m_array[m][index] = "No"
+        if arr[m][index] == 1:
+            m_array[m][index] = "Yes"
+    return m_array
+
+# Here marks functions specific to each season
+
+def as_pos(arr, index):
+    m_array = arr
+    for m in range(len(arr)):
+        if arr[m][index] == 0:
+            m_array[m][index] = "Scorekeeper TARMAC"
+        elif arr[m][index] == 1:
+            m_array[m][index] = "Audience TARMAC"
+    return m_array
+
+def taxi(arr, index):
+    m_array = arr
+    for m in range(len(arr)):
+        if arr[m][index] == 0:
+            m_array[m][index] = "No Taxi"
+        if arr[m][index] == 1:
+            m_array[m][index] = "Taxied"
+    return m_array
+
+def climb(arr, index):
+    m_array = arr
+    for m in range(len(arr)):
+        if arr[m][index] == 0:
+            m_array[m][index] = "Not Attempted"
+        elif arr[m][index] == 1:
+            m_array[m][index] = "Low"
+        elif arr[m][index] == 2:
+            m_array[m][index] = "Middle"
+        elif arr[m][index] == 3:
+            m_array[m][index] = "High"
+        elif arr[m][index] == 4:
+            m_array[m][index] = "Traversal"
+        elif arr[m][index] == 5:
+            m_array[m][index] = "Attempt Failed"
     return m_array
