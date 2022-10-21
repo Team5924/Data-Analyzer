@@ -1,3 +1,11 @@
-Index,Header,Scouter,Match,Alliance,Taxi,Auto Start Position,Taxi,Auto Upper Cargo,Auto Lower Cargo,Auto Cargo Missed,Teleop Upper Cargo,Teleop Lower Cargo,Teleop Cargo Missed,Climb
-h=0,s=5,m=1,r=0,t=11,as=0,ta=1,au=4,al=0,acm=1,tu=7,tl=0,tcm=3,c=2,e=0
-h=0,s=5,m=2,r=2,t=12,as=0,ta=1,au=5,al=0,acm=0,tu=5,tl=0,tcm=1,c=2,e=0
+Index;Header;Scouter;Match;Alliance;Team;Auto Start Position;Taxi;Auto Upper Cargo;Auto Lower Cargo;Auto Cargo Missed;Teleop Upper Cargo;Teleop Lower Cargo;Teleop Cargo Missed;Climb
+h=0;s=4;m=6;r=3;t=1662;as=1;ta=1;au=2;al=0;acm=0;tu=4;tl=0;tcm=2;c=4;e=0
+h=0;s=4;m=4;r=3;t=3859;as=0;ta=0;au=1;al=0;acm=0;tu=13;tl=0;tcm=0;c=2;e=0
+h=0;s=4;m=7;r=3;t=841;as=1;ta=1;au=2;al=0;acm=1;tu=0;tl=0;tcm=0;c=0;e=0
+h=0;s=46;m=7;r=4;t=2073;as=0;t=0;au=3;al=0;acm=2;tu=0;tl=0;tcm=0;c=0;e=0
+h=0;s=46;m=9;r=4;t=6662;as=0;t=0;au=1;al=0;acm=1;tu=0;tl=0;tcm=0;c=0;e=0
+h=0;s=46;m=9;r=4;t=2135;as=0;t=1;au=1;al=0;acm=0;tu=4;tl=0;tcm=2;c=4;e=0
+h=0;s=46;m=10;r=4;t=7419;as=0;t=1;au=0;al=0;acm=1;tu=1;tl=0;tcm=4;c=2;e=0
+h=0;s=46;m=11;r=4;t=5817;as=0;t=1;au=1;al=0;acm=0;tu=14;tl=0;tcm=5;c=0;e=0
+h=0;s=46;m=12;r=4;t=2551;as=0;t=1;au=1;al=0;acm=1;tu=0;tl=0;tcm=2;c=0;e=0
+h=0;s=46;m=13;r=4;t=5940;as=0;t=1;au=2;al=0;acm=1;tu=15;tl=1;tcm=2;c=2;e=0
