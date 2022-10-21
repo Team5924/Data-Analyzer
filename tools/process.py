@@ -7,7 +7,14 @@ scouters = scouters.to_numpy()
 # Process all entries at once; all process functions here
 
 def all(arr):
-    return None
+    m_array = arr
+    m_array = array(m_array)
+    m_array = names(arr, 1)
+    m_array = alliance(arr, 3)
+    m_array = as_pos(arr, 5)
+    m_array = taxi(arr, 6)
+    m_array = climb(arr, 13)
+    return m_array
 
 # Removes the header from each entry
 # "s=0" --> 0
