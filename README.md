@@ -12,10 +12,13 @@ Custom Python solution for analyzing scouting data.
 - Branch off from `dev`
 - Name the branch `[YYYY]-[name of season]-analysis`
   - e.g. `2022-Rapid-React-Analysis`
+
+<br>[Return to top](#table-of-contents)
   
 ## How It Works
   This application utilizes Jupyter Notebooks and custom made Python packages to process data from scouting for analysis. Python packages are used to organize and define custom functions for data processing. i.e. `filter.team()`, `filter.match()`, etc... These functions are designed to be reproducible, republicable, and reusable. While the Python is used for defining functions, the Jupyter Notebook is where these functions will be called/used.
-  
+
+<br> [Return to top](#table-of-contents)
 ### Python Packages
 
 #### Creating a directory to store Python packages
@@ -42,3 +45,5 @@ from [package_directory] import [package_name]
 # Calling the function
 [package_name].[method_name]()
 ```
+
+[Return to top](#table-of-contents)
