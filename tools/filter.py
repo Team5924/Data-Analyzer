@@ -9,7 +9,9 @@ def qt(arr):
         if arr[m][0] == 0: # 'h=0' --> quantitative
             m_array[x] = arr[m]
             x = x + 1
-    return m_array[~np.all(m_array == 0, axis=1)]
+    m_array = m_array[~np.all(m_array == 0, axis=1)]
+    m_array = np.delete(m_array, 0, 1)
+    return m_array
 
 # Makes a copy of 'arr' and replaces each row with only QL data
 
@@ -20,7 +22,10 @@ def ql(arr):
         if arr[m][0] == 1: # 'h=1' --> qualitative
             m_array[x] = arr[m]
             x = x + 1
-    return m_array[~np.all(m_array == 0, axis=1)]
+    m_array[~np.all(m_array == 0, axis=1)]
+    m_array = np.delete(m_array, 0, 1)
+    return m_array
+
 
 # Makes a copy of 'arr' and replaces each row with only data from 'team'
 # 'column' is the index of 'team' in 'arr'
