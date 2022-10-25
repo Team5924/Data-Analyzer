@@ -4,8 +4,7 @@ import pandas as pd
 scouters = pd.read_csv("files/scouters.csv")
 scouters = scouters.to_numpy()
 
-# Process all entries at once; all process functions here
-
+# QoL; manually enter all process functions and arguments here
 def all(arr):
     m_array = arr
     m_array = array(m_array)
@@ -14,12 +13,16 @@ def all(arr):
     m_array = as_pos(arr, 5)
     m_array = taxi(arr, 6)
     m_array = climb(arr, 13)
+    m_array = np.delete(m_array, (len(m_array[0])-1), axis=1) # deletes the last column
     return m_array
+
+
+##############################
+
 
 # Removes the header from each entry
 # "s=0" --> 0
 # 'input' = string
-
 def entry(input, dtype):
     # Locates the index of the "="
     x = 0
@@ -39,7 +42,6 @@ def entry(input, dtype):
         return int("".join(m_entry))
 
 # Utilizes the 'entry()' to process and create a new array of data without the header
-
 def array(arr):
     m_array = arr
     for m in range(len(arr)):
@@ -64,8 +66,6 @@ def alliance(arr, index):
             m_array[m][index] = "Blue"
     return m_array
 
-# Simple function for processing only data that is binary
-
 def binary(arr, index):
     m_array = arr
     for m in range(len(arr)):
@@ -75,7 +75,9 @@ def binary(arr, index):
             m_array[m][index] = "Yes"
     return m_array
 
-# Here marks functions specific to each season
+
+########## Here marks functions specific to each season ##########
+
 
 def as_pos(arr, index):
     m_array = arr

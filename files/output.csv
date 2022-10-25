@@ -1,0 +1,13 @@
+Scouter,Match,Alliance,Team,Auto Start Position,Taxi,Auto Upper Cargo,Auto Lower Cargo,Auto Cargo Missed,Teleop Upper Cargo,Teleop Lower Cargo,Teleop Cargo Missed,Climb
+,1,Red,1678,Scorekeeper TARMAC,Taxied,5,0,0,10,0,0,Traversal
+,1,Red,254,Scorekeeper TARMAC,Taxied,5,0,0,12,0,0,Traversal
+,1,Red,973,Scorekeeper TARMAC,Taxied,5,0,0,18,0,0,Traversal
+,1,Blue,5940,Audience TARMAC,Taxied,5,0,0,16,0,0,Traversal
+,1,Blue,1323,Audience TARMAC,Taxied,5,0,0,15,0,0,Traversal
+,1,Blue,1072,Audience TARMAC,Taxied,5,0,0,18,0,0,Traversal
+,2,Red,1678,Scorekeeper TARMAC,Taxied,5,0,0,12,0,0,Traversal
+,2,Red,254,Scorekeeper TARMAC,Taxied,5,0,0,17,0,0,Traversal
+,2,Red,973,Scorekeeper TARMAC,Taxied,5,0,0,20,0,0,Traversal
+,2,Blue,5940,Audience TARMAC,Taxied,5,0,0,24,0,0,Traversal
+,2,Blue,1323,Audience TARMAC,Taxied,5,0,0,22,0,0,Traversal
+,2,Blue,1072,Audience TARMAC,Taxied,5,0,0,16,0,0,Traversal
