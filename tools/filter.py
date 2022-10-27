@@ -25,7 +25,7 @@ def ql(arr):
     return m_array
 
 # Makes a copy of 'arr' and replaces each row, of the copy, with only data from 'team'
-# 'column' is the index of 'team' in 'arr'
+# 'column' is the index of team # in 'arr'
 def team(arr, team, column):
     m_array = np.zeros(np.shape(arr), object)
     x = 0
@@ -36,7 +36,7 @@ def team(arr, team, column):
     return m_array[~np.all(m_array == 0, axis=1)]
 
 # Makes a copy of 'arr' and replaces each row, of the copy, with only data from 'match'
-# 'column' is the index of 'match' in 'arr'
+# 'column' is the index of match # in 'arr'
 def match(arr, match, column):
     m_array = np.zeros(np.shape(arr), object)
     x = 0

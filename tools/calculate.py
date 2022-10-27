@@ -1,20 +1,24 @@
+# SEASON SPECIFIC
+
 from tools import filter
 
-cargo_indexes = [10, 11]
-climb_index = 13
+cargo = {"auto": [7, 8], "teleop": [10, 11]}
 
-# 'indexes' is a list[]
-# 2022 Rapid React Specific
-def avg_cargo(arr, team, column):
-    m_team = filter.team(arr, team, column)
-    m_upper_sum = 0
-    m_lower_sum = 0
-    x = 0
-    # Sum of points
-    for m in range(len(m_team)):
-        m_upper_sum = m_upper_sum + m_team[m][cargo_indexes[0]]
-        m_lower_sum = m_lower_sum + m_team[m][cargo_indexes[1]]
-        x = x + 1
-    # Average points
-    m_points = m_upper_sum + m_lower_sum
-    return m_points
+def avg_cargo(arr, team, column, phase):
+    m_array = filter.team(arr, team, column)
+    m_upper = 0
+    m_lower = 0
+    # sum of cargo
+    for m in range(len(m_array)):
+        m_upper = m_upper + m_array[m][cargo[phase][0]]
+        m_lower = m_lower + m_array[m][cargo[phase][1]]
+    # calculating points
+    if phase == "auto":
+        m_upper = m_upper * 4
+        m_lower = m_lower * 2
+    if phase == "teleop":
+        m_upper = m_upper * 2
+        m_lower = m_lower * 1
+    m_sum = m_upper + m_lower # sum of points
+    m_avg = int(m_sum/len(m_array)) # average of points
+    return m_avg
