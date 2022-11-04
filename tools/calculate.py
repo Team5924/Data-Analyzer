@@ -4,8 +4,8 @@ from tools import filter
 
 cargo = {"auto": [7, 8], "teleop": [10, 11]}
 
-def avg_cargo(arr, team, column, phase):
-    m_array = filter.team(arr, team, column)
+def avg_cargo_points(arr, team, team_index, phase):
+    m_array = filter.team(arr, team, team_index)
     m_upper = 0
     m_lower = 0
     # sum of cargo
@@ -14,7 +14,7 @@ def avg_cargo(arr, team, column, phase):
         m_lower = m_lower + m_array[m][cargo[phase][1]]
     # calculating points
     if phase == "auto":
-        m_upper = m_upper * 4
+        m_upper = m_upper * 4 # Points multiplier
         m_lower = m_lower * 2
     if phase == "teleop":
         m_upper = m_upper * 2

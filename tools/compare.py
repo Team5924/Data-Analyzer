@@ -3,9 +3,13 @@ import pandas as pd
 
 from tools import calculate
 
-def team(arr, team_1, team_2, column):
-    points_1 = calculate.avg_cargo(arr, team_1, column)
-    points_2 = calculate.avg_cargo(arr, team_2, column)
-    m_array = {"Team": [team_1, team_2], "Total Average Points": [points_1, points_2]}
-    print(pd.DataFrame(m_array))
-
+def team(arr, num_teams):
+    # save a list teams to compare
+    teams = []
+    for i in range(num_teams):
+        teams.append([int(input("Enter a team:"))])
+    # Finds the average points for each team
+    for m in range(len(teams)):
+        teams[m].append(calculate.avg_cargo_points(arr, teams[m][0], 4, "auto"))
+        teams[m].append(calculate.avg_cargo_points(arr, teams[m][0], 4, "teleop"))
+    return teams
