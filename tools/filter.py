@@ -26,22 +26,22 @@ def ql(arr):
 
 # Makes a copy of 'arr' and replaces each row, of the copy, with only data from 'team'
 # 'column' is the index of team # in 'arr'
-def team(arr, team, column):
+def team(arr, team, team_index):
     m_array = np.zeros(np.shape(arr), object)
     x = 0
     for m in range(len(arr)):
-        if arr[m][column] == team:
+        if arr[m][team_index] == team:
             m_array[x] = arr[m]
             x = x + 1
     return m_array[~np.all(m_array == 0, axis=1)]
 
 # Makes a copy of 'arr' and replaces each row, of the copy, with only data from 'match'
 # 'column' is the index of match # in 'arr'
-def match(arr, match, column):
+def match(arr, match, match_index):
     m_array = np.zeros(np.shape(arr), object)
     x = 0
     for m in range(len(arr)):
-        if arr[m][column] == match:
+        if arr[m][match_index] == match:
             m_array[x] = arr[m]
             x = x + 1
     return m_array[~np.all(m_array == 0, axis=1)]
