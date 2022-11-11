@@ -12,16 +12,7 @@ body {
 /* MENU */
 #menu {
     background-color: hsl(0, 0%, 30%);
-    padding: 20px;
-    padding-top: 100px;
     border-right: 2px solid black;
-}
-
-/* MENU-HEADER */
-.menu-header {
-    color: hsl(0, 0%, 100%);
-    font-family: 'Trebuchet MS';
-    margin: 0;
 }
 
 /* CONTENT */
@@ -30,12 +21,12 @@ body {
     padding-left: 50px;
 }
 
-/* HEADING 2 */
-h2 {
-    font-family: var(--h1);
-}
-
 /* SPACE */
 #space {
     background-color: hsl(0, 0%, 85%);
+}
+
+/* HEADING 1 */
+h2 {
+    font-family: var(--h1);
 }
