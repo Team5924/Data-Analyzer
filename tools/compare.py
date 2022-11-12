@@ -10,8 +10,8 @@ def team(arr, teams_list):
         teams.append([teams_list[i]])
     # Finds the average points for each team
     for i in range(len(teams)):
-        teams[i].append(calculate.avg_cargo_points(arr, teams[i][0], 4, "auto"))
-        teams[i].append(calculate.avg_cargo_points(arr, teams[i][0], 4, "teleop"))
+        teams[i].append(calculate.avg_cargo_points(arr, teams[i][0], 4, 'auto'))
+        teams[i].append(calculate.avg_cargo_points(arr, teams[i][0], 4, 'teleop'))
     return teams
 
 def match(arr, match, match_index):
@@ -23,6 +23,6 @@ def match(arr, match, match_index):
     # finds the alliance, auto and teleop points for each team
     for i in range(len(teams)):
         teams[i].append(get.alliance(arr, teams[i][0], 4, match, match_index))
-        teams[i].append(calculate.cargo_points(m_array, teams[i][0], 4, "auto"))
-        teams[i].append(calculate.cargo_points(m_array, teams[i][0], 4, "teleop"))
+        teams[i].append(calculate.cargo_points(m_array, teams[i][0], 4, 'auto'))
+        teams[i].append(calculate.cargo_points(m_array, teams[i][0], 4, 'teleop'))
     return teams

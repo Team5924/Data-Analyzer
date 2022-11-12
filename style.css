@@ -1,0 +1,21 @@
+/* VARIABLES */
+:root {
+    --text: 'Trebuchet MS';
+    --code: Fira Mono;
+}
+
+/* UNORDERED LIST */
+ul {
+    padding-left: 16px;
+}
+
+/* LIST ELEMENT */
+li {
+    list-style: none;
+}
+
+/* MENU HEADER */
+.menu-header {
+    font-family: Trebuchet MS;
+    font-weight: bold;
+}

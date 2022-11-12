@@ -1,7 +1,7 @@
 import re
 
 
-m_type = {"team": 0, "auto": 1, "teleop": 2}
+m_type = {'team': 0, 'auto': 1, 'teleop': 2}
 
 # generic sorting funciton
 def order(arr, type, direction):
@@ -28,9 +28,9 @@ def alliance(arr):
     blue = []
     for i in range(len(arr)):
         # records the team # and it's index
-        if arr[i][1] == "Red": # '1' is the alliance index
+        if arr[i][1] == 'Red': # '1' is the alliance index
             alliance.append([0, i])
-        if arr[i][1] == "Blue":
+        if arr[i][1] == 'Blue':
             alliance.append([1, i])
     # sorts the teams from least to greatest
     alliance.sort()

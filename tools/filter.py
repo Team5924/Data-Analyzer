@@ -5,7 +5,7 @@ def qt(arr):
     m_array = np.zeros(np.shape(arr), object)
     x = 0
     for m in range(len(arr)):
-        if arr[m][0] == 0: # "h=0" --> quantitative
+        if arr[m][0] == 0: # 'h=0' --> quantitative
             m_array[x] = arr[m]
             x = x + 1
     m_array = m_array[~np.all(m_array == 0, axis=1)]
@@ -17,7 +17,7 @@ def ql(arr):
     m_array = np.zeros(np.shape(arr), object)
     x = 0
     for m in range(len(arr)):
-        if arr[m][0] == 1: # "h=1" --> qualitative
+        if arr[m][0] == 1: # 'h=1' --> qualitative
             m_array[x] = arr[m]
             x = x + 1
     m_array[~np.all(m_array == 0, axis=1)]

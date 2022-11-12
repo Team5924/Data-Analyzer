@@ -1,0 +1,84 @@
+/* VARIABLES */
+:root {
+    --h1: Roboto Slab, ff-tisa-web-pro, Georgia,Arial, sans-serif;
+    --text: Trebuchet MS;
+    --code: Fira Mono;
+}
+
+/* BODY */
+body {
+    display: grid;
+    grid-template-columns: 300px 75ch auto;
+}
+
+/* MENU */
+#menu {
+    background-color: hsl(0, 0%, 30%);
+    padding: 20px;
+    padding-top: 100px;
+    border-right: 2px solid black;
+}
+
+/* MENU-HEADER */
+.menu-header {
+    color: hsl(0, 0%, 100%);
+    font-family: var(--text);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* MENU - UNORDERED LISTS */
+#menu ul {
+    padding-left: 8px;
+}
+
+/* MENU - LIST ELEMENTS */
+#menu a, #menu li{
+    color: hwb(0 100% 0%);
+    text-decoration: none;
+    list-style: none;
+}
+#menu li:hover{
+    background-color: hsl(0, 0%, 50%);
+}
+
+/* CONTENT */
+#content {
+    padding: 25px;
+}
+
+/* NAV LINK */
+.nav-link {
+    display: inline;
+}
+.nav-link:hover{
+    text-decoration: underline;
+}
+
+/* HEADING 2 */
+h2 {
+    font-family: var(--h1);
+}
+
+/* FLEXBOX */
+.centerbox {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: auto
+}
+
+/* CODEBLOCK */
+.codeblock {
+    background-color: lightgrey;
+    padding: 20px;
+    font-family: var(--code);
+}
+
+/* SPACE */
+#space {
+    background-color: hsl(0, 0%, 85%);
+}
