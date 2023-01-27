@@ -1,23 +1,22 @@
-<link rel='stylesheet' type='text/css' href='style.css'/>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto Slab'>
+# **2023 Charged Up Data Analyzer API**
 
-<h1>2022 Rapid React Data Analysis - Documentation</h1>
+## **`Parse.py`**
 
-**<h2>Table of Contents</h2>**
+---
+
+### **`json_to_array`**
+json_to_array(**array**: *Array*)
+
+**Parameters**
 <ul>
-    <li class='menu-header'>INTRO</li>
-    <ul>
-        <li><a href='getting-started'>Getting Started</a></li>
-        <li><a href='Philosophy'>Philosophy</a></li>
-    </ul>
-    <li class='menu-header'>FILES</li>
-    <ul>
-        <li><a href='#script'>script.ipynb</a></li>
-    </ul>
+    <li><b>array:</b> <i>Array</i></li>
+    takes in an array of JSON objects
 </ul>
 
-**<h2 id='getting-started'>Getting Started</h2>**
+**Returns**
+<ul>
+    <li><b>array:</b> <i>Array</i></li>
+    returns an Numpy array of arrays
+</ul>
 
-**<h2 id='philosophy'>Philosophy</h2>**
-
-**<h2 id='script'>script.ipynb</h2>**
+---
