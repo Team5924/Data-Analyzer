@@ -50,11 +50,20 @@ class Data:
             if entry['Match'] == match:
                 if entry['Alliance'] <= 2:
                     blue.append(entry)
-                if entry['Alliance'] > 3:
+                if entry['Alliance'] > 2:
                     red.append(entry)
-        
+
         m_list.extend(blue)
         m_list.extend(red)
+
+        self.value = m_list
+        return self
+    
+    def id(self, id):
+        m_list = []
+        for entry in self.value:
+            if entry['iD'] == id:
+                m_list.append(entry)
 
         self.value = m_list
         return self
@@ -64,17 +73,22 @@ class Data:
         matches = 0
         counter = 0
         for entry in self.value:
-            if entry['Team'] == team:
+             if entry['Team'] == team:
                 matches += 1
                 if entry[field] == occurence:
                     counter += 1
 
-        avg = counter / matches
+        try:
+            avg = round(counter / matches, 4) * 100
+        except:
+            avg = None
         return avg
     
     # ? Sorts data by a field, in descending order
     # * @param {string} field
     def sort(self, field):
+        df = pd.DataFrame(self.value)
+        df.sort_values(field, ascending=False)
         return pd.DataFrame(self.value).sort_values(field, ascending=False)
     
     ### * --------------- ###
@@ -232,7 +246,8 @@ class Data:
                 bot = (botCone + botCube) * 3
 
         total = top + mid + bot
-        return total
+        avg_points = round(total / matches, 2)
+        return avg_points
     
     # ? Calculate the average point for teleop
     # * @param {int} team
@@ -249,7 +264,8 @@ class Data:
                 bot = (botCone + botCube) * 2
 
         total = top + mid + bot
-        return total
+        avg_points = round(total / matches, 2)
+        return avg_points
     
     # ? Compares a list of teams
     # * @param {list} teams
@@ -258,13 +274,13 @@ class Data:
         for team in teams:
             m_list.append({
                 'Team': team,
-                'Avg Mobility Rate': self.calc_avg(team, 'Mobility', 1),
-                'Avg Docked Rate (Auto)': self.calc_avg(team, 'Docked (Auto)', 1),
-                'Avg Engaged Rate (Auto)': self.calc_avg(team, 'Docked (Auto)', 1),
+                'Mobility %': self.calc_avg(team, 'Mobility', 1),
+                'Avg Docked (Auto) %': self.calc_avg(team, 'Docked (Auto)', 1),
+                'Engaged (Auto) %': self.calc_avg(team, 'Docked (Auto)', 1),
                 'Avg Auto Points Scored': self.calc_avg_autoPointsScored(team),
                 'Avg Teleop Points Scored': self.calc_avg_teleopPointsScored(team),
-                'Avg Docked Rate (Endgame)': self.calc_avg(team, 'Docked (Endgame)', 1),
-                'Avg Endgame Rate (Endgame)': self.calc_avg(team, 'Docked (Endgame)', 1)
+                'Docked (Endgame) %': self.calc_avg(team, 'Docked (Endgame)', 1),
+                'Endgame (Endgame) %': self.calc_avg(team, 'Docked (Endgame)', 1)
             })
         
         self.value = m_list
@@ -274,27 +290,21 @@ class Data:
     def alliance_grids(self):
         # * try and excepts are used because sometimes not all 6 robots are scouted per match
         # Create grids
-        grids = []; blue = []; red = []
-        for i, entry in enumerate(self.value):
+        blue = np.zeros((3, 9), dtype=np.int64)
+        red = np.zeros((3, 9), dtype=np.int64)
+        for entry in self.value:
             top = np.array(entry['Score (Total)']['top'])
             mid = np.array(entry['Score (Total)']['mid'])
             botCone = np.array(entry['Score (Total)']['botCone'])
             botCube = np.array(entry['Score (Total)']['botCube'])
             bot = botCone + botCube
-            grids.append([
-                top,
-                mid,
-                bot
-            ])
-        grids = np.array(grids)
 
-        # Separate by alliance
-        try:
-            blue = grids[:len(grids)//2]; blue = blue[0]
-            red = grids[len(grids)//2:]; red = red[0]
-        except:
-            pass
-        # Replace any number, greater than 1, with 1
+            # Separate data by alliance
+            if entry['Alliance'] <= 2:
+                blue += [top, mid, bot]
+            if entry['Alliance'] > 2:
+                red += [top, mid, bot]
+
         try:
             for row in blue:
                 for i in range(len(row)):
