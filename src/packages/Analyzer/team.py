@@ -44,7 +44,7 @@ class Team():
             if team[0] == team_num:
                 print(team_num, team[1])
                 
-        return Image(filename=file, width=500)
+        return Image(filename=file, width=250)
     
     # Returns match data of a specific team
     def match(this, team: int) -> pd.DataFrame:
