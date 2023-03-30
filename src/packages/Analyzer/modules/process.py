@@ -5,6 +5,8 @@ def id(id: int) -> str:
     for item in id_list:
         if id == item[0]:
             return item[1]
+        else:
+            return 'Invalid ID'
         
 # Converts binary values into 'Yes' and 'No"
 def binary(num: int) -> str:
